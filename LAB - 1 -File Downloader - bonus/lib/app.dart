@@ -27,7 +27,7 @@ Future<void> downloadFiles(List<String> urls, String saveDir) async {
 
 
 void main() async {
-  final urls = ['https://files-go.en.uptodown.com/android/download', 'https://ncert.nic.in/textbook/pdf/kech101.pdf'];
+  final urls = [ 'https://ncert.nic.in/textbook/pdf/kech101.pdf', 'https://github.com/fuadmuhe12/UGR-6052-14-LAB-Exercises/archive/refs/heads/main.zip', 'https://biology.org.ua/files/lib/Raven_Johnson_McGraw-Hill_Biology.pdf'];
   final saveDir = '.download';
   await downloadFiles(urls, saveDir);
 
