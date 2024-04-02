@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
           leading: const Icon(Icons.arrow_back),
           title: const Text(
             'Cart',
-            style: TextStyle(fontSize: 30, color: Colors.yellow),
+            style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 212, 206, 153)),
           ),
         ),
         body: Container(
@@ -34,14 +34,14 @@ class MyApp extends StatelessWidget {
                         'Shopping Cart',
                         style: TextStyle(
                           fontSize: 30,
-                          color: Colors.amber,
+                          color: Color.fromARGB(255, 45, 45, 44),
                         ),
                       ),
                       Text(
                         'Verify your quantity and check out',
                         style: TextStyle(
                           fontSize: 15,
-                          color: Colors.amber,
+                          color: Color.fromARGB(255, 90, 86, 76),
                         ),
                       )
                     ],
