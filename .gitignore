@@ -78,3 +78,4 @@ out/
 **/.idea/libraries
 # VSCode
 **/.vscode/
+state mangement/counter_riverpod/pubspec.yaml

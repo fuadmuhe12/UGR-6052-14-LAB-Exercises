@@ -1,43 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 void main() {
-  Bloc.observer = const CounterObserver();
-  runApp(const CounterApp());
+  Bloc.observer = const CustomObserver();
+  runApp(const CustomApp());
 }
 
-class Countcu extends Cubit<int> {
-  Countcu() : super(0);
+class CustomCubit extends Cubit<int> {
+  CustomCubit() : super(0);
 
   void increment() => emit(state + 1);
 
   void decrement() => emit(state - 1);
 }
 
-
-class Countlook extends StatelessWidget {
-  const Countlook({super.key});
+class CustomPage extends StatelessWidget {
+  const CustomPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => Countcu(),
-      child: const Counterlook(),
+      create: (_) => CustomCubit(),
+      child: const CustomView(),
     );
   }
 }
 
-
-class Counterlook extends StatelessWidget {
-  const Counterlook({super.key});
+class CustomView extends StatelessWidget {
+  const CustomView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       body: Center(
-        child: BlocBuilder<Countcu, int>(
+        child: BlocBuilder<CustomCubit, int>(
           builder: (context, state) {
-            return Text('$state', style: textTheme.displayMedium);
+            return Text('$state', style: textTheme.headline4);
           },
         ),
       ),
@@ -46,15 +45,15 @@ class Counterlook extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           FloatingActionButton(
-            key: const Key('Counterlook_increment_floatingActionButton'),
+            key: const Key('customView_increment_floatingActionButton'),
             child: const Icon(Icons.add),
-            onPressed: () => context.read<Countcu>().increment(),
+            onPressed: () => context.read<CustomCubit>().increment(),
           ),
           const SizedBox(height: 8),
           FloatingActionButton(
-            key: const Key('Counterlook_decrement_floatingActionButton'),
+            key: const Key('customView_decrement_floatingActionButton'),
             child: const Icon(Icons.remove),
-            onPressed: () => context.read<Countcu>().decrement(),
+            onPressed: () => context.read<CustomCubit>().decrement(),
           ),
         ],
       ),
@@ -62,17 +61,17 @@ class Counterlook extends StatelessWidget {
   }
 }
 
-
-class CounterApp extends MaterialApp {
-  const CounterApp({super.key}) : super(home: const Countlook());
+class CustomApp extends MaterialApp {
+  const CustomApp({Key? key}) : super(home: const CustomPage());
 }
 
-
-class CounterObserver extends BlocObserver {
-  const CounterObserver();
+class CustomObserver extends BlocObserver {
+  const CustomObserver();
 
   @override
   void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
     super.onChange(bloc, change);
+    // ignore: avoid_print
+    print('${bloc.runtimeType} $change');
   }
 }
