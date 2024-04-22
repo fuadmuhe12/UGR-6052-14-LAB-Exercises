@@ -1,0 +1,80 @@
+# Flutter/Dart specific
+## Flutter/Dart ##
+# General
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+.dart_tool/
+.packages
+.pubspec.lock
+# IDE - VSCode specific
+.vscode/
+# Android
+**/android/**/build/
+**/android/**/generated/
+**/android/**/local.properties
+**/android/**/gradle/
+**/android/captures/
+# iOS
+**/ios/**/Pods/
+**/ios/**/.symlinks/
+**/ios/**/.generated/
+**/ios/**/.DS_Store
+**/ios/Flutter/ephemeral/
+# Web
+**/web/*.dart.js*
+**/web/*.dart.js**
+**/web/*.dart.bootstrap.js*
+**/web/*.dart.js*
+**/web/*.dart.bootstrap.js*
+**/web/*.dart.js*
+**/web/*.dart.js**
+**/web/*.dart.bootstrap.js*
+**/web/*.dart.js*
+**/web/*.dart.bootstrap.js*
+# MacOS
+**/macos/Flutter/ephemeral/
+**/macos/Flutter/App.framework/
+**/macos/Flutter/Flutter.xcconfig
+# Linux
+**/linux/flutter/generated_plugin_registrant.cc
+# Windows
+**/windows/Flutter/ephemeral/
+**/windows/Flutter/FlutterConfig.cmake
+# Build
+**/build/
+# Avoid committing IDE-specific files
+.idea/
+*.iml
+*.ipr
+*.iws
+*.classpath
+*.project
+*.settings/
+# Miscellaneous
+*.log
+*.bat
+.idea*/
+.idea*/
+.gradle/
+*.iml
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+out/
+.idea
+# Android Studio
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+**/.idea/gradle.xml
+**/.idea/assetWizardSettings.xml
+**/.idea/dictionaries
+**/.idea/libraries
+# VSCode
+**/.vscode/
