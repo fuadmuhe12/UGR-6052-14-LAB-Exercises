@@ -5,8 +5,8 @@ void main() {
   runApp(const CounterApp());
 }
 
-class CounterCubit extends Cubit<int> {
-  CounterCubit() : super(0);
+class Countcu extends Cubit<int> {
+  Countcu() : super(0);
 
   void increment() => emit(state + 1);
 
@@ -14,28 +14,28 @@ class CounterCubit extends Cubit<int> {
 }
 
 
-class CounterPage extends StatelessWidget {
-  const CounterPage({super.key});
+class Countlook extends StatelessWidget {
+  const Countlook({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => CounterCubit(),
-      child: const CounterView(),
+      create: (_) => Countcu(),
+      child: const Counterlook(),
     );
   }
 }
 
 
-class CounterView extends StatelessWidget {
-  const CounterView({super.key});
+class Counterlook extends StatelessWidget {
+  const Counterlook({super.key});
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       body: Center(
-        child: BlocBuilder<CounterCubit, int>(
+        child: BlocBuilder<Countcu, int>(
           builder: (context, state) {
             return Text('$state', style: textTheme.displayMedium);
           },
@@ -46,15 +46,15 @@ class CounterView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           FloatingActionButton(
-            key: const Key('counterView_increment_floatingActionButton'),
+            key: const Key('Counterlook_increment_floatingActionButton'),
             child: const Icon(Icons.add),
-            onPressed: () => context.read<CounterCubit>().increment(),
+            onPressed: () => context.read<Countcu>().increment(),
           ),
           const SizedBox(height: 8),
           FloatingActionButton(
-            key: const Key('counterView_decrement_floatingActionButton'),
+            key: const Key('Counterlook_decrement_floatingActionButton'),
             child: const Icon(Icons.remove),
-            onPressed: () => context.read<CounterCubit>().decrement(),
+            onPressed: () => context.read<Countcu>().decrement(),
           ),
         ],
       ),
@@ -64,7 +64,7 @@ class CounterView extends StatelessWidget {
 
 
 class CounterApp extends MaterialApp {
-  const CounterApp({super.key}) : super(home: const CounterPage());
+  const CounterApp({super.key}) : super(home: const Countlook());
 }
 
 
